@@ -5,19 +5,19 @@ class Solution {
         int start = image[sr][sc];
         image[sr][sc]=color;
         
-        BFS(image,start,sr,sc,color);
+        DFS(image,start,sr,sc,color);
         
         return image;
     }
     
-    public static void BFS(int[][] image,int start,int i, int j, int color)
+    public static void DFS(int[][] image,int start,int i, int j, int color)
     {
         if(j-1 > -1)
         {
             if(image[i][j-1] == start)
             {
                 image[i][j-1] = color;
-                BFS(image,start,i,j-1,color);
+                DFS(image,start,i,j-1,color);
             }
         }
         if(j+1 < image[i].length)
@@ -25,7 +25,7 @@ class Solution {
             if(image[i][j+1] == start)
             {
                 image[i][j+1] = color;
-                BFS(image,start,i,j+1,color);
+                DFS(image,start,i,j+1,color);
             }
         }
         if(i-1 > -1)
@@ -33,7 +33,7 @@ class Solution {
             if(image[i-1][j] == start)
             {
                 image[i-1][j] = color;
-                BFS(image,start,i-1,j,color);
+                DFS(image,start,i-1,j,color);
             }
         }
         if(i+1 < image.length)
@@ -41,7 +41,7 @@ class Solution {
             if(image[i+1][j] == start)
             {
                 image[i+1][j] = color;
-                BFS(image,start,i+1,j,color);
+                DFS(image,start,i+1,j,color);
             }
         }
     }
